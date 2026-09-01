@@ -17,7 +17,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/Popin_Binyousaf_2pc_39.jpg",
-            "link": "shopify://collections/winter-collection",
+            "link": "shopify://collections/sale",
             "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
