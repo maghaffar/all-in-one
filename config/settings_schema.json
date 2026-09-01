@@ -1568,6 +1568,71 @@
         "default": "/collections/all"
       },
       {
+        "type": "checkbox",
+        "id": "show_cart_drawer_close_button",
+        "label": "t:settings.show_cart_drawer_close_button",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "cart_drawer_close_button_text",
+        "label": "t:settings.cart_drawer_close_button_text",
+        "default": "t:text_defaults.continue_shopping",
+        "visible_if": "{{ settings.show_cart_drawer_close_button == true }}"
+      },
+      {
+        "type": "url",
+        "id": "cart_drawer_close_button_link",
+        "label": "t:settings.link",
+        "visible_if": "{{ settings.show_cart_drawer_close_button == true }}"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_close_button_bg",
+        "label": "t:settings.background",
+        "default": "{{ settings.color_palette.foreground }}",
+        "alpha": true,
+        "visible_if": "{{ settings.show_cart_drawer_close_button == true }}"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_close_button_text_color",
+        "label": "t:settings.text",
+        "default": "{{ settings.color_palette.background }}",
+        "alpha": true,
+        "visible_if": "{{ settings.show_cart_drawer_close_button == true }}"
+      },
+      {
+        "type": "color",
+        "id": "cart_drawer_close_button_border_color",
+        "label": "t:settings.borders",
+        "default": "{{ settings.color_palette.foreground }}",
+        "alpha": true,
+        "visible_if": "{{ settings.show_cart_drawer_close_button == true }}"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_close_button_border_width",
+        "label": "t:settings.border_width",
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "unit": "px",
+        "default": 0,
+        "visible_if": "{{ settings.show_cart_drawer_close_button == true }}"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_close_button_border_radius",
+        "label": "t:settings.border_radius",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0,
+        "visible_if": "{{ settings.show_cart_drawer_close_button == true }}"
+      },
+      {
         "type": "header",
         "content": "t:content.product_media"
       },

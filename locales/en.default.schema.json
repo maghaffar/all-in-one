@@ -793,10 +793,8 @@
     "cart_related_products": "Related products",
     "cart_title": "Cart",
     "cart_total": "Cart total",
-    // Setting label for cart display format (page vs drawer)
     "cart_type": "Type",
     "auto_open_cart_drawer": "\"Add to cart\" auto-opens drawer",
-    // Text case setting for typography (uppercase/lowercase)
     "case": "Case",
     "checkout_buttons": "Accelerated checkout buttons",
     "collection": "Collection",
@@ -808,7 +806,6 @@
     "color_scheme": "Color scheme",
     "colors": "Colors",
     "columns": "Columns",
-    // Layout container block name for grouping other blocks
     "content": "Content",
     "content_alignment": "Content alignment",
     "content_direction": "Content direction",
@@ -821,18 +818,15 @@
     "currency_code": "Currency code",
     "custom_height": "Custom height",
     "custom_minimum_height": "Custom minimum height",
-    // Checkbox to enable separate size settings for mobile devices
     "custom_mobile_size": "Custom mobile size",
     "custom_mobile_width": "Custom mobile width",
     "custom_width": "Custom width",
     "custom_liquid": "Liquid code",
-    // Primary color scheme option, not specialized variants
     "default": "Default",
     "default_logo": "Default logo",
     "desktop_height": "Desktop height",
     "desktop_pagination": "Desktop pagination",
     "direction": "Direction",
-    // Button appearance for email signup form
     "display": "Display",
     "divider": "Divider",
     "divider_color": "Divider color",
@@ -842,7 +836,8 @@
     "drawer_borders": "Drawer border",
     "drop_shadow": "Drop shadow",
     "empty_cart_button_link": "Empty cart button link",
-    // Collection setting for products shown before search input
+    "show_cart_drawer_close_button": "Show button above checkout CTA",
+    "cart_drawer_close_button_text": "Button text",
     "empty_state_collection": "Empty state collection",
     "empty_state_collection_info": "Shown before a search is entered",
     "enable_filtering": "Filters",
@@ -864,7 +859,6 @@
     "first_row_media_position": "First row media position",
     "fixed_height": "Pixel height",
     "fixed_width": "Pixel width",
-    // Checkbox to show country flag icon in localization selector
     "flag": "Flag",
     "font": "Font",
     "font_family": "Font family",
@@ -873,7 +867,6 @@
     "full_width_first_image": "Full width first image",
     "full_width_on_mobile": "Full width on mobile",
     "gap": "Gap",
-    // CSS Y-axis transform setting for vertical positioning (legacy/unused)
     "geometric_translate_y": "Geometric translate Y",
     "gift_card_form": "Gift card form",
     "gradient_direction": "Gradient direction",
@@ -882,7 +875,6 @@
     "headings": "Headings",
     "height": "Height",
     "hide_logo_on_home_page": "Hide logo on home page",
-    // Checkbox to hide padding control settings
     "hide_padding": "Hide padding",
     "hide_unselected_variant_media": "Hide unselected variant media",
     "horizontal_gap": "Horizontal gap",
@@ -901,7 +893,6 @@
     "image_2": "Image 2",
     "image_border_radius": "Image corner radius",
     "image_gap": "Image gap",
-    // Image picker setting to upload custom image as icon
     "image_icon": "Image icon",
     "image_opacity": "Image opacity",
     "image_position": "Image position",
@@ -910,7 +901,6 @@
     "inverse": "Inverse",
     "inverse_logo": "Inverse logo",
     "installments": "Installments",
-    // Checkbox to embed submit button inside email input field
     "integrated_button": "Integrated button",
     "items_to_show": "Items to show",
     "label": "Label",
@@ -918,9 +908,7 @@
     "large": "Large",
     "layout": "Layout",
     "layout_gap": "Layout gap",
-    // Layout presentation option for displaying items
     "layout_style": "Style",
-    // Layout display format (grid, carousel, etc.)
     "layout_type": "Type",
     "left": "Left",
     "left_padding": "Left padding",
@@ -941,7 +929,6 @@
     "make_details_sticky_desktop": "Sticky on desktop",
     "make_section_full_width": "Make section full width",
     "max_width": "Max width",
-    // Section header for product card media settings
     "media": "Media",
     "media_fit": "Media fit",
     "media_height": "Media height",
@@ -998,19 +985,16 @@
     "primary_button_background": "Primary button background",
     "primary_button_border": "Primary button border",
     "primary_button_text": "Primary button text",
-    // Color setting for clickable hyperlinks throughout the theme
     "primary_color": "Links",
     "primary_font": "Primary font",
     "primary_hover_color": "Hover links",
     "product": "Product",
     "product_and_card_title_case": "Product and card title case",
-    // Checkbox to enable image carousel within product cards
     "product_card_carousel": "Show carousel",
     "product_cards": "Product cards",
     "product_count": "Product count",
     "product_pages": "Product pages",
     "product_templates": "Product templates",
-    // Setting label for text capitalization of product titles
     "product_title_case": "Product title case",
     "product_type": "Product type",
     "products": "Products",
@@ -1038,9 +1022,7 @@
       "input_preset": "Input",
       "checkbox_preset": "Checkbox label"
     },
-    // Checkbox setting to enable quick add to cart from product cards
     "quick_add": "Quick add",
-    // Color scheme for quick add buttons on product cards
     "quick_add_colors": "Quick add colors",
     "ratio": "Ratio",
     "read_only": "Read only",
@@ -1054,7 +1036,6 @@
     "scroll_speed": "Time to next announcement",
     "search": "Search",
     "search_icon": "Search icon",
-    // Setting for search bar placement in header
     "search_position": "Position",
     "search_row": "Row",
     "row_height": "Row height",
@@ -1067,9 +1048,7 @@
     "seller_note_open_by_default": "Open note to seller by default",
     "shadow_color": "Shadow",
     "shadow_opacity": "Shadow opacity",
-    // Background shape for carousel navigation buttons
     "shape": "Shape",
-    // Checkbox label to toggle visibility of UI elements
     "show": "Show",
     "show_as_accordion": "Show as accordion on mobile",
     "show_author": "Author",
@@ -1086,7 +1065,6 @@
     "show_second_image_on_hover": "Show second image on hover",
     "show_swatch_label": "Text labels for swatches",
     "show_tax_info": "Tax information",
-    // Font size or element dimensions setting
     "size": "Size",
     "skus": "SKUs",
     "size_mobile": "Mobile size",
@@ -1094,13 +1072,10 @@
     "slide_width": "Slide width",
     "slideshow_fullwidth": "Full width slides",
     "small": "Small",
-    // Animation timing control for slideshows and announcements
     "speed": "Speed",
-    // Financial statement or account summary setting
     "statement": "Statement",
     "sticky_add_to_cart": "Sticky add to cart",
     "sticky_header": "Sticky header",
-    // Icon line thickness setting label
     "stroke": "Stroke",
     "button_style": "Button style",
     "selected_button_style": "Selected button style",
@@ -1112,29 +1087,23 @@
     "success_color": "Success",
     "swatches": "Swatches",
     "tertiary_font": "Tertiary font",
-    // Generic label for text-related settings (content or color)
     "text": "Text",
-    // Text capitalization setting for typography (uppercase/lowercase)
     "text_case": "Case",
     "text_hierarchy": "Text hierarchy",
     "text_label_case": "Text label case",
     "text_presets": "Text presets",
-    // Pixel width setting for borders, dividers, or lines
     "thickness": "Thickness",
     "title": "Title",
     "title_preset": "Title preset",
-    // Label for range input controlling top spacing/margin
     "top": "Top",
     "top_level_size": "Top level size",
     "top_padding": "Top padding",
     "top_row": "Top row",
     "transition_to_main_product": "Product card to product page transition",
     "transparent_background": "Transparent background",
-    // Label for dropdown to select type/category
     "type": "Type",
     "type_preset": "Text preset",
     "underline_thickness": "Underline thickness",
-    // Measurement unit selector (pixel vs percent)
     "unit": "Unit",
     "use_inverse_logo": "Use inverse logo",
     "variant_images": "Variant images",
@@ -1156,7 +1125,6 @@
     "view_all_as_last_card": "\"View all\" as last card",
     "view_more_show": "Show View more button",
     "visibility": "Visibility",
-    // Typography setting for font weight/thickness
     "weight": "Weight",
     "width": "Width",
     "width_desktop": "Desktop width",
@@ -1222,6 +1190,7 @@
     "what_is_return_policy": "What is the return policy?",
     "when_will_order_arrive": "When will I get my order?",
     "where_are_products_made": "Where are your products manufactured?",
-    "disclosures": "Disclosures"
+    "disclosures": "Disclosures",
+    "continue_shopping": "Continue shopping"
   }
 }

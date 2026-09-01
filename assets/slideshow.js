@@ -677,9 +677,9 @@ export class Slideshow extends Component {
     if (!(event.target instanceof Element)) return;
     if (this.disabled || this.#dragging) return;
 
-    // Check if the event target is within a 3D model interactive element
-    // This prevents the slideshow from capturing drag events when interacting with 3D models
-    if (event.target.closest('model-viewer')) {
+    // Check if the event target is within an interactive element or 3D model
+    // This prevents the slideshow from capturing drag events when interacting with links, buttons, form controls, or 3D models
+    if (event.target.closest('model-viewer, a, button, input, select, textarea')) {
       return;
     }
 

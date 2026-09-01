@@ -258,6 +258,62 @@
 </div>
 
 <div class="cart__ctas">
+  {% if settings.show_cart_drawer_close_button and section_id == 'cart-drawer-section' %}
+    {%- capture close_button_style -%}
+      {%- if settings.cart_drawer_close_button_bg != blank -%}
+        --button-background-color: {{ settings.cart_drawer_close_button_bg }};
+      {%- endif -%}
+      {%- if settings.cart_drawer_close_button_text_color != blank -%}
+        --button-color: {{ settings.cart_drawer_close_button_text_color }};
+      {%- endif -%}
+      {%- if settings.cart_drawer_close_button_border_color != blank -%}
+        --button-border-color: {{ settings.cart_drawer_close_button_border_color }};
+      {%- endif -%}
+      {%- if settings.cart_drawer_close_button_border_width != blank -%}
+        --button-border-width: {{ settings.cart_drawer_close_button_border_width }}px;
+      {%- endif -%}
+      {%- if settings.cart_drawer_close_button_border_radius != blank -%}
+        border-radius: {{ settings.cart_drawer_close_button_border_radius }}px;
+      {%- endif -%}
+    {%- endcapture -%}
+
+    {%- if settings.cart_drawer_close_button_link != blank -%}
+      <a
+        href="{{ settings.cart_drawer_close_button_link }}"
+        class="cart__close-button button"
+        {% if close_button_style != blank %}
+          style="{{ close_button_style | strip }}"
+        {% endif %}
+      >
+        <span class="button-text">
+          {%- if settings.cart_drawer_close_button_text != blank -%}
+            {{- settings.cart_drawer_close_button_text -}}
+          {%- else -%}
+            {{- 'actions.continue_shopping' | t -}}
+          {%- endif -%}
+        </span>
+      </a>
+    {%- else -%}
+      <button
+        type="button"
+        class="cart__close-button button"
+        on:click="#cart-drawer/close"
+        aria-label="{{ 'actions.close' | t }}"
+        {% if close_button_style != blank %}
+          style="{{ close_button_style | strip }}"
+        {% endif %}
+      >
+        <span class="button-text">
+          {%- if settings.cart_drawer_close_button_text != blank -%}
+            {{- settings.cart_drawer_close_button_text -}}
+          {%- else -%}
+            {{- 'actions.continue_shopping' | t -}}
+          {%- endif -%}
+        </span>
+      </button>
+    {%- endif -%}
+  {% endif %}
+
   <button
     type="submit"
     id="checkout"
@@ -477,7 +533,8 @@
     grid-template-columns: 1fr;
   }
 
-  .cart__ctas .cart__checkout-button {
+  .cart__ctas .cart__checkout-button,
+  .cart__ctas .cart__close-button {
     width: 100%;
     height: clamp(25px, var(--height-buy-buttons), 55px);
     padding-inline: var(--padding-4xl);
