@@ -208,8 +208,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 5,
-                "padding-block-end": 5,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -379,8 +379,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 5,
-                "padding-block-end": 5,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -550,8 +550,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 5,
-                "padding-block-end": 5,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -717,8 +717,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 5,
-                "padding-block-end": 5,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -877,8 +877,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 5,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1008,8 +1008,8 @@
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
-        "columns_gap": 6,
-        "rows_gap": 20,
+        "columns_gap": 10,
+        "rows_gap": 30,
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "full-width",
@@ -1017,7 +1017,7 @@
         "gap": 0,
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 0,
-        "padding-block-end": 10
+        "padding-block-end": 30
       }
     }
   },
