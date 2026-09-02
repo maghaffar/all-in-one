@@ -46,7 +46,7 @@
             "image_1": "shopify://shop_images/riwaaj_banner.jpg",
             "link": "shopify://collections/riwaaj",
             "content_direction": "row",
-            "vertical_on_mobile": true,
+            "vertical_on_mobile": false,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
