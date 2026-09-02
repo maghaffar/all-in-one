@@ -41,6 +41,7 @@
         "text_GkJ79f": {
           "type": "text",
           "name": "t:names.text",
+          "disabled": true,
           "settings": {
             "text": "{{ closest.collection.description }}",
             "width": "fit-content",
