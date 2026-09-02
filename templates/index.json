@@ -824,6 +824,25 @@
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
+        "button_yJbDxp": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "View All",
+            "link": "shopify://collections/binyousaf",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "custom_button_background": "{{ settings.color_palette.foreground }}",
+            "custom_button_text": "{{ settings.color_palette.background }}",
+            "custom_button_border": "{{ settings.color_palette.background }}",
+            "link_text_color": "",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
         "static-header": {
           "type": "_product-list-content",
           "name": "t:names.header",
@@ -887,6 +906,7 @@
             "product_list_button_MWeP9V": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -999,6 +1019,9 @@
           ]
         }
       },
+      "block_order": [
+        "button_yJbDxp"
+      ],
       "name": "t:names.product_list",
       "settings": {
         "collection": "binyousaf",
