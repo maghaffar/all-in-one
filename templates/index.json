@@ -69,8 +69,8 @@
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/761b6c6843ddf7df4e48e20e06308479.png",
-            "link": "shopify://collections",
+            "image_1": "shopify://shop_images/WhatsApp_Image_2026-09-02_at_7.06.53_PM.jpg",
+            "link": "shopify://collections/nazakat",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -93,6 +93,7 @@
             "text_cQaike": {
               "type": "text",
               "name": "t:names.heading",
+              "disabled": true,
               "settings": {
                 "text": "<h3>New arrivals</h3>",
                 "width": "fit-content",
