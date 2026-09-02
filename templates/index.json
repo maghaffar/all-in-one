@@ -838,7 +838,7 @@
             "link_text_color": "",
             "width": "custom",
             "custom_width": 16,
-            "width_mobile": "custom",
+            "width_mobile": "fit-content",
             "custom_width_mobile": 16
           },
           "blocks": {}
