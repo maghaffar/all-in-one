@@ -21,7 +21,7 @@
             "max_width": "normal",
             "alignment": "left",
             "type_preset": "custom",
-            "font": "var(--font-subheading--family)",
+            "font": "var(--font-heading--family)",
             "font_size": "2rem",
             "line_height": "normal",
             "letter_spacing": "normal",
