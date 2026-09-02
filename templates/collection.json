@@ -41,7 +41,6 @@
         "text_twGGkJ": {
           "type": "text",
           "name": "t:names.description",
-          "disabled": true,
           "settings": {
             "text": "",
             "width": "fit-content",
