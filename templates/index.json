@@ -42,8 +42,8 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/74371b698c94baf8fac94c45929e14f5.png",
-            "link": "shopify://collections/binyousaf",
+            "image_1": "shopify://shop_images/signatre_binyousaf.jpg",
+            "link": "shopify://collections/signature",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
