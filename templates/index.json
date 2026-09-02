@@ -16,8 +16,8 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Popin_Binyousaf_2pc_39.jpg",
-            "link": "shopify://collections/sale",
+            "image_1": "shopify://shop_images/riwaaj_binyousaf_collection.jpg",
+            "link": "shopify://collections/riwaaj",
             "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
