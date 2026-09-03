@@ -12,6 +12,33 @@
     "slideshow_kyetMV": {
       "type": "slideshow",
       "blocks": {
+        "slide_B4ChgR": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "media_type_1": "image",
+            "image_1": "shopify://shop_images/floral_bareez_banner_mob.jpg",
+            "link": "shopify://collections/floral-bareeze",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
+          },
+          "blocks": {}
+        },
         "slide_it8pc4": {
           "type": "_slide",
           "name": "t:names.slide",
@@ -147,6 +174,7 @@
         }
       },
       "block_order": [
+        "slide_B4ChgR",
         "slide_it8pc4",
         "slide_PUKhRe",
         "slide_fMw3Yx",
