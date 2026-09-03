@@ -18,7 +18,7 @@
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/riwaaj_binyousaf_banner.jpg",
-            "link": "shopify://collections/gullbano",
+            "link": "shopify://collections/riwaaj",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
