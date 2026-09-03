@@ -343,6 +343,7 @@
       "block_order": [
         "group_e9bbtz"
       ],
+      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
@@ -685,6 +686,7 @@
       "block_order": [
         "group_Hffw6j"
       ],
+      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
@@ -852,6 +854,7 @@
       "block_order": [
         "group_HVrdDJ"
       ],
+      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
