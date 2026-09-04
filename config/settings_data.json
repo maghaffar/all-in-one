@@ -12,7 +12,7 @@
     "logo": "shopify://shop_images/all_in_one.png",
     "logo_height": 36,
     "logo_height_mobile": 28,
-    "favicon": "shopify://shop_images/all_in_one.png",
+    "favicon": "shopify://shop_images/2F67A528-F811-4DEC-9358-A9D1F00CF15C.png",
     "page_text_color": "{{ settings.color_palette.background }}",
     "type_body_font": "montserrat_n4",
     "type_subheading_font": "montserrat_n3",
