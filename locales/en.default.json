@@ -356,7 +356,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "email_or_phone_label": "WhatsApp Number Required"
+        "email_or_phone_label": "WhatsApp Number Required",
+        "phone_country_code_label": "+92"
       }
     }
   }
