@@ -1081,7 +1081,7 @@
       ],
       "name": "t:names.product_list",
       "settings": {
-        "collection": "binyousaf",
+        "collection": "sale",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
