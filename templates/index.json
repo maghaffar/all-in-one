@@ -12,13 +12,13 @@
     "slideshow_kyetMV": {
       "type": "slideshow",
       "blocks": {
-        "slide_B4ChgR": {
+        "slide_it8pc4": {
           "type": "_slide",
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/floralbareeze_binyousaf_mob.jpg",
-            "link": "shopify://collections/floral-bareeze",
+            "image_1": "shopify://shop_images/azureebinyousaf_banner.jpg",
+            "link": "shopify://collections/azuree",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -39,13 +39,13 @@
           },
           "blocks": {}
         },
-        "slide_it8pc4": {
+        "slide_B4ChgR": {
           "type": "_slide",
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/azureebinyousaf_banner.jpg",
-            "link": "shopify://collections/azuree",
+            "image_1": "shopify://shop_images/floralbareeze_binyousaf_mob.jpg",
+            "link": "shopify://collections/floral-bareeze",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -174,8 +174,8 @@
         }
       },
       "block_order": [
-        "slide_B4ChgR",
         "slide_it8pc4",
+        "slide_B4ChgR",
         "slide_PUKhRe",
         "slide_fMw3Yx",
         "slide_MqxcCW",
