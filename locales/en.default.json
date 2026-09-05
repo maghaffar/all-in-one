@@ -355,9 +355,6 @@
   },
   "shopify": {
     "checkout": {
-      "contact": {
-        "email_or_phone_label": "WhatsApp Number Required"
-      },
       "shipping": {
         "shipping_line_phone": "Your courier may use this number to contact you"
       },
