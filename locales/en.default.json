@@ -360,6 +360,9 @@
       },
       "shipping": {
         "shipping_line_phone": "Your courier may use this number to contact you"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "News and Offers"
       }
     }
   }
