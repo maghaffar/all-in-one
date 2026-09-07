@@ -371,7 +371,6 @@
       "block_order": [
         "group_e9bbtz"
       ],
-      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
@@ -1131,8 +1130,8 @@
   },
   "order": [
     "slideshow_kyetMV",
-    "collection_list_zf46MT",
     "collection_list_WQmryB",
+    "collection_list_zf46MT",
     "collection_list_RQzWHn",
     "collection_list_GfHrbe",
     "product_list_fa6P9H"
