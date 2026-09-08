@@ -67,6 +67,7 @@
       assign block_settings = block.settings
       assign menu_content_type = block_settings.menu_style | default: 'text'
       assign image_border_radius = block_settings.image_border_radius
+      assign enable_mega_menu = block_settings.enable_mega_menu
 
       render 'contrast-override', background_color: block_settings.background_color, text_color: block_settings.text_color, section_id: block.id
 
@@ -144,24 +145,36 @@
                 style="{% render 'submenu-font-styles', settings: block_settings %}"
               >
                 {% assign list_id = 'MegaMenuList-' | append: forloop.index %}
-                <div class="mega-menu section section--full-width-margin section--{{ section.settings.section_width }}">
-                  <div
-                    class="mega-menu__grid"
-                    data-menu-grid-id="{{ list_id }}"
-                  >
-                    {% render 'mega-menu-list',
-                      parent_link: link,
-                      id: list_id,
-                      section: section,
-                      grid_columns_count: 6,
-                      grid_columns_count_tablet: 4,
-                      grid_columns_count_collection_images: 8,
-                      menu_content_type: menu_content_type,
-                      content_aspect_ratio: ratio,
-                      image_border_radius: image_border_radius
-                    %}
+                {% if enable_mega_menu %}
+                  <div class="mega-menu section section--full-width-margin section--{{ section.settings.section_width }}">
+                    <div
+                      class="mega-menu__grid"
+                      data-menu-grid-id="{{ list_id }}"
+                    >
+                      {% render 'mega-menu-list',
+                        parent_link: link,
+                        id: list_id,
+                        section: section,
+                        grid_columns_count: 6,
+                        grid_columns_count_tablet: 4,
+                        grid_columns_count_collection_images: 8,
+                        menu_content_type: menu_content_type,
+                        content_aspect_ratio: ratio,
+                        image_border_radius: image_border_radius
+                      %}
+                    </div>
                   </div>
-                </div>
+                {% else %}
+                  <ul class="menu-list__dropdown-list list-unstyled">
+                    {% for child_link in link.links %}
+                      <li>
+                        <a href="{{ child_link.url }}" class="menu-list__dropdown-link">
+                          <span class="wrap-text">{{- child_link.title -}}</span>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               </div>
             </div>
           {%- endif -%}
@@ -189,7 +202,7 @@
 
     <header-menu
       ref="headerMenu"
-      class="header-menu"
+      class="header-menu{% unless enable_mega_menu %} header-menu--dropdown{% endunless %}"
       {{ block.shopify_attributes }}
       data-hydration-key="header-menu"
     >
@@ -597,6 +610,68 @@
     height: 100%;
   }
 
+  @media screen and (min-width: 990px) {
+    #header-component:has(.header-menu--dropdown) .header__underlay-open {
+      display: none;
+    }
+
+    .header-menu--dropdown {
+      .menu-list__list-item:where(:not([slot='overflow'])) {
+        position: relative;
+      }
+
+      .menu-list__list-item:where(:not([slot='overflow'])) > .menu-list__submenu {
+        top: 100%;
+        left: 0;
+        width: max-content;
+        min-width: 15rem;
+        max-width: calc(100vw - 2rem);
+        padding-inline: 0;
+        clip-path: none;
+        background-color: var(--color-background);
+        transform: translateX(var(--compact-submenu-shift, 0px));
+      }
+
+      .menu-list__submenu-inner {
+        display: block;
+        width: max-content;
+        min-width: 15rem;
+        max-width: 100%;
+        max-height: min(80vh, 32rem);
+        padding: var(--padding-sm);
+        overflow-y: auto;
+        overflow-x: auto;
+        transform: none;
+      }
+
+      .menu-list__dropdown-list {
+        display: grid;
+        grid-template-rows: repeat(5, minmax(0, max-content));
+        grid-auto-flow: column;
+        grid-auto-columns: 15rem;
+        column-gap: var(--gap-xl);
+        width: max-content;
+        max-width: 100%;
+      }
+
+      .menu-list__dropdown-link {
+        display: flex;
+        width: 100%;
+        min-height: 2.5rem;
+        align-items: center;
+        padding: var(--padding-xs) var(--padding-sm);
+        color: var(--menu-child-font-color);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .menu-list__dropdown-link:hover,
+      .menu-list__dropdown-link:focus-visible {
+        color: var(--menu-child-active-font-color);
+      }
+    }
+  }
+
   .menu-list__submenu-inner {
     position: relative;
     display: flex;
@@ -822,6 +897,12 @@
       "id": "menu",
       "label": "t:settings.menu",
       "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mega_menu",
+      "label": "Enable mega menu",
+      "default": true
     },
     {
       "type": "header",

@@ -34,6 +34,7 @@ class HeaderMenu extends Component {
 
     onDocumentLoaded(this.#preloadImages);
     window.addEventListener('resize', this.#resizeListener);
+    window.addEventListener('resize', this.#alignCompactSubmenu);
     this.addEventListener('keydown', this.#onKeydown);
     this.overflowMenu?.addEventListener('pointerleave', this.#overflowSubmenuListener);
   }
@@ -41,6 +42,7 @@ class HeaderMenu extends Component {
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener('resize', this.#resizeListener);
+    window.removeEventListener('resize', this.#alignCompactSubmenu);
     this.removeEventListener('keydown', this.#onKeydown);
     document.body.removeEventListener('pointermove', this.#onPointerMove);
     if (this.#state.activeItem) {
@@ -58,6 +60,30 @@ class HeaderMenu extends Component {
   #resizeListener = debounce(() => {
     setHeaderMenuStyle();
   }, 100);
+
+  #alignCompactSubmenu = () => {
+    const item = this.#state.activeItem;
+    if (!item || !this.classList.contains('header-menu--dropdown')) return;
+
+    const submenu = findSubmenu(item);
+    if (!(submenu instanceof HTMLElement)) return;
+
+    requestAnimationFrame(() => {
+      const viewportPadding = 16;
+      const bounds = submenu.getBoundingClientRect();
+      let offset = 0;
+
+      if (bounds.right > window.innerWidth - viewportPadding) {
+        offset -= bounds.right - (window.innerWidth - viewportPadding);
+      }
+
+      if (bounds.left + offset < viewportPadding) {
+        offset += viewportPadding - (bounds.left + offset);
+      }
+
+      submenu.style.setProperty('--compact-submenu-shift', `${offset}px`);
+    });
+  };
 
   #overflowSubmenuListener = () => {
     this.#deactivate();
@@ -277,7 +303,10 @@ class HeaderMenu extends Component {
     if (previouslyActiveItem) {
       this.#expandableFor(previouslyActiveItem).ariaExpanded = 'false';
       const previousSubmenu = findSubmenu(previouslyActiveItem);
-      if (previousSubmenu) previousSubmenu.inert = true;
+      if (previousSubmenu) {
+        previousSubmenu.inert = true;
+        previousSubmenu.style.removeProperty('--compact-submenu-shift');
+      }
     }
     if (previouslyActiveOverflowItem && previouslyActiveOverflowItem !== previouslyActiveItem) {
       this.#expandableFor(previouslyActiveOverflowItem).ariaExpanded = 'false';
@@ -326,6 +355,11 @@ class HeaderMenu extends Component {
       // inert so their contents cannot be reached (visibility:hidden alone can be
       // overridden by descendants that re-assert visibility).
       submenu.inert = false;
+
+      const submenuListItem = item.closest('.menu-list__list-item');
+      if (submenuListItem instanceof HTMLElement && this.classList.contains('header-menu--dropdown')) {
+        this.#alignCompactSubmenu();
+      }
 
       // Cleanup any existing mutation observer from previous menu activations
       this.#cleanupMutationObserver();
@@ -448,6 +482,7 @@ class HeaderMenu extends Component {
     if (submenu) {
       delete submenu.dataset.active;
       submenu.inert = true;
+      submenu.style.removeProperty('--compact-submenu-shift');
     }
   };
 
