@@ -96,7 +96,7 @@
             "enable_mega_menu": false,
             "background_color": "{{ settings.color_palette.background }}",
             "text_color": "#000000",
-            "type_font_primary_size": "0.875rem",
+            "type_font_primary_size": "1rem",
             "menu_font_style": "regular",
             "type_font_primary_link": "subheading",
             "type_case_primary_link": "uppercase",
