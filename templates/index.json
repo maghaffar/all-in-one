@@ -12,6 +12,32 @@
     "slideshow_kyetMV": {
       "type": "slideshow",
       "blocks": {
+        "slide_fMw3Yx": {
+          "type": "_slide",
+          "settings": {
+            "media_type_1": "image",
+            "image_1": "shopify://shop_images/gullbano_binyousaf_banner.jpg",
+            "link": "shopify://collections/gullbano",
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "{{ settings.color_palette.background }}",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
+          },
+          "blocks": {}
+        },
         "slide_B4ChgR": {
           "type": "_slide",
           "name": "t:names.slide",
@@ -174,32 +200,6 @@
           },
           "blocks": {}
         },
-        "slide_fMw3Yx": {
-          "type": "_slide",
-          "settings": {
-            "media_type_1": "image",
-            "image_1": "shopify://shop_images/gullbano_binyousaf_banner.jpg",
-            "link": "shopify://collections/gullbano",
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "background_color": "{{ settings.color_palette.background }}",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 48,
-            "padding-block-end": 48,
-            "padding-inline-start": 48,
-            "padding-inline-end": 48
-          },
-          "blocks": {}
-        },
         "slide_MqxcCW": {
           "type": "_slide",
           "settings": {
@@ -228,13 +228,13 @@
         }
       },
       "block_order": [
+        "slide_fMw3Yx",
         "slide_B4ChgR",
         "slide_7tdL3y",
         "slide_i3NeHR",
         "slide_TTkwQw",
         "slide_it8pc4",
         "slide_PUKhRe",
-        "slide_fMw3Yx",
         "slide_MqxcCW"
       ],
       "name": "t:names.slideshow_full_frame",
