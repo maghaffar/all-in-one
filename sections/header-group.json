@@ -94,7 +94,7 @@
           "settings": {
             "menu": "main-menu",
             "enable_mega_menu": false,
-            "enable_l2_glassmorphism": true,
+            "enable_l2_glassmorphism": false,
             "l2_glass_text_color": "{{ settings.color_palette.background }}",
             "l2_glass_background_color": "#ffffff",
             "l2_glass_background_opacity": 70,
