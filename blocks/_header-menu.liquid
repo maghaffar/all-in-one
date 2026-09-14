@@ -142,7 +142,7 @@
               <div
                 id="submenu-{{ forloop.index }}"
                 class="menu-list__submenu-inner"
-                style="{% render 'submenu-font-styles', settings: block_settings %}"
+                style="{% render 'submenu-font-styles', settings: block_settings %}{% if block_settings.enable_l2_glassmorphism %} --menu-child-font-color: {{ block_settings.l2_glass_text_color | default: '#000000' }}; --menu-child-active-font-color: {{ block_settings.l2_glass_text_color | default: '#000000' }};{% endif %}"
               >
                 {% assign list_id = 'MegaMenuList-' | append: forloop.index %}
                 {% if enable_mega_menu %}
@@ -202,7 +202,18 @@
 
     <header-menu
       ref="headerMenu"
-      class="header-menu{% unless enable_mega_menu %} header-menu--dropdown{% endunless %}"
+      class="header-menu{% unless enable_mega_menu %} header-menu--dropdown{% endunless %}{% if block_settings.enable_l2_glassmorphism %} header-menu--l2-glassmorphism{% endif %}"
+      style="
+        --l2-glass-bg-rgb: {{ block_settings.l2_glass_background_color.rgb | default: '255, 255, 255' }};
+        --l2-glass-bg-alpha: {{ block_settings.l2_glass_background_opacity | default: 84 | divided_by: 100 }};
+        --l2-glass-blur: {{ block_settings.l2_glass_blur_amount | default: 18 }}px;
+        --l2-glass-saturation: {{ block_settings.l2_glass_saturation | default: 150 }}%;
+        --l2-glass-border-rgb: {{ block_settings.l2_glass_border_color.rgb | default: '255, 255, 255' }};
+        --l2-glass-border-alpha: {{ block_settings.l2_glass_border_opacity | default: 20 | divided_by: 100 }};
+        --l2-glass-border-width: {{ block_settings.l2_glass_border_width | default: 1 }}px;
+        --l2-glass-shadow: {% if block_settings.l2_glass_box_shadow %}0 22px 36px rgb(0 0 0 / 0.16){% else %}none{% endif %};
+        --l2-glass-text-color: {{ block_settings.l2_glass_text_color | default: '#000000' }};
+      "
       {{ block.shopify_attributes }}
       data-hydration-key="header-menu"
     >
@@ -419,6 +430,37 @@
   .menu-list__list-item:not([slot='overflow']) {
     flex-direction: column;
   }
+
+  @media screen and (min-width: 990px) {
+    .header-menu--dropdown.header-menu--l2-glassmorphism
+      .menu-list__list-item:where(:not([slot='overflow']))
+      > .menu-list__submenu,
+    .header-menu--l2-glassmorphism
+      .menu-list__list-item:where(:not([slot='overflow']))
+      > .menu-list__submenu {
+      background: rgb(var(--l2-glass-bg-rgb) / var(--l2-glass-bg-alpha));
+      border: var(--l2-glass-border-width) solid rgb(var(--l2-glass-border-rgb) / var(--l2-glass-border-alpha));
+      box-shadow: var(--l2-glass-shadow);
+      backdrop-filter: blur(var(--l2-glass-blur)) saturate(var(--l2-glass-saturation));
+      -webkit-backdrop-filter: blur(var(--l2-glass-blur)) saturate(var(--l2-glass-saturation));
+    }
+
+    .header-menu--l2-glassmorphism .menu-list__submenu-inner {
+      background: transparent;
+    }
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .header-menu--dropdown.header-menu--l2-glassmorphism
+      .menu-list__list-item:where(:not([slot='overflow']))
+      > .menu-list__submenu,
+    .header-menu--l2-glassmorphism
+      .menu-list__list-item:where(:not([slot='overflow']))
+      > .menu-list__submenu {
+      background: rgb(var(--l2-glass-bg-rgb) / var(--l2-glass-bg-alpha));
+    }
+  }
+
   .menu-list__list-item[slot='more']:has(.menu-list__link[aria-expanded='true'])::after {
     content: '';
     width: 100%;
@@ -632,6 +674,20 @@
         transform: translateX(var(--compact-submenu-shift, 0px));
       }
 
+      .header-menu--l2-glassmorphism .menu-list__list-item:where(:not([slot='overflow'])) > .menu-list__submenu {
+        background: rgb(var(--l2-glass-bg-rgb) / var(--l2-glass-bg-alpha));
+        border: var(--l2-glass-border-width) solid rgb(var(--l2-glass-border-rgb) / var(--l2-glass-border-alpha));
+        box-shadow: var(--l2-glass-shadow);
+        backdrop-filter: blur(var(--l2-glass-blur)) saturate(var(--l2-glass-saturation));
+        -webkit-backdrop-filter: blur(var(--l2-glass-blur)) saturate(var(--l2-glass-saturation));
+      }
+
+      @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        .header-menu--l2-glassmorphism .menu-list__list-item:where(:not([slot='overflow'])) > .menu-list__submenu {
+          background: rgb(var(--l2-glass-bg-rgb) / var(--l2-glass-bg-alpha));
+        }
+      }
+
       .menu-list__submenu-inner {
         display: block;
         width: max-content;
@@ -665,10 +721,30 @@
         white-space: nowrap;
       }
 
+      .header-menu--dropdown.header-menu--l2-glassmorphism .menu-list__dropdown-link,
+      .header-menu--dropdown.header-menu--l2-glassmorphism .menu-list__dropdown-link:hover,
+      .header-menu--dropdown.header-menu--l2-glassmorphism .menu-list__dropdown-link:focus-visible {
+        color: var(--l2-glass-text-color, #000000);
+      }
+
       .menu-list__dropdown-link:hover,
       .menu-list__dropdown-link:focus-visible {
         color: var(--menu-child-active-font-color);
       }
+    }
+  }
+
+  .header-menu--l2-glassmorphism .menu-list__list-item:where(:not([slot='overflow'])) > .menu-list__submenu {
+    background: rgb(var(--l2-glass-bg-rgb) / var(--l2-glass-bg-alpha));
+    border: var(--l2-glass-border-width) solid rgb(var(--l2-glass-border-rgb) / var(--l2-glass-border-alpha));
+    box-shadow: var(--l2-glass-shadow);
+    backdrop-filter: blur(var(--l2-glass-blur)) saturate(var(--l2-glass-saturation));
+    -webkit-backdrop-filter: blur(var(--l2-glass-blur)) saturate(var(--l2-glass-saturation));
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .header-menu--l2-glassmorphism .menu-list__list-item:where(:not([slot='overflow'])) > .menu-list__submenu {
+      background: rgb(var(--l2-glass-bg-rgb) / var(--l2-glass-bg-alpha));
     }
   }
 
@@ -902,6 +978,88 @@
       "type": "checkbox",
       "id": "enable_mega_menu",
       "label": "Enable mega menu",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_l2_glassmorphism",
+      "label": "Enable L2 dropdown glassmorphism",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "l2_glass_text_color",
+      "label": "L2 glass text color",
+      "default": "#000000",
+      "visible_if": "{{ block.settings.enable_l2_glassmorphism == true }}"
+    },
+    {
+      "type": "color",
+      "id": "l2_glass_background_color",
+      "label": "L2 glass background color",
+      "default": "#ffffff",
+      "visible_if": "{{ block.settings.enable_l2_glassmorphism == true }}"
+    },
+    {
+      "type": "range",
+      "id": "l2_glass_background_opacity",
+      "label": "L2 glass background opacity",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 84
+    },
+    {
+      "type": "range",
+      "id": "l2_glass_blur_amount",
+      "label": "L2 glass backdrop blur",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "l2_glass_saturation",
+      "label": "L2 glass saturation",
+      "min": 100,
+      "max": 200,
+      "step": 1,
+      "unit": "%",
+      "default": 150
+    },
+    {
+      "type": "color",
+      "id": "l2_glass_border_color",
+      "label": "L2 glass border color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "l2_glass_border_opacity",
+      "label": "L2 glass border opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "l2_glass_border_width",
+      "label": "L2 glass border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "l2_glass_box_shadow",
+      "label": "Enable L2 glass box shadow",
       "default": true
     },
     {
