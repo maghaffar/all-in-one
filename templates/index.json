@@ -43,8 +43,8 @@
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/floralbareeze_binyousaf_mob.jpg",
-            "link": "shopify://collections/sabrang",
+            "image_1": "shopify://shop_images/Majestic_binyousaf.jpg",
+            "link": "shopify://collections/majestic",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
