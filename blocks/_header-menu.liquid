@@ -9,6 +9,11 @@
 {% liquid
   assign block_settings = block.settings
   assign effective_submenu_color = block_settings.background_color | default: settings.page_background_color
+  if request.page_type == 'index'
+    assign l2_glass_text_color = block_settings.l2_glass_text_color_home
+  else
+    assign l2_glass_text_color = block_settings.l2_glass_text_color_other
+  endif
 %}
 
 {% case variant %}
@@ -142,7 +147,7 @@
               <div
                 id="submenu-{{ forloop.index }}"
                 class="menu-list__submenu-inner"
-                style="{% render 'submenu-font-styles', settings: block_settings %}{% if block_settings.enable_l2_glassmorphism %} --menu-child-font-color: {{ block_settings.l2_glass_text_color | default: '#000000' }}; --menu-child-active-font-color: {{ block_settings.l2_glass_text_color | default: '#000000' }};{% endif %}"
+                style="{% render 'submenu-font-styles', settings: block_settings %}{% if block_settings.enable_l2_glassmorphism %} --menu-child-font-color: {{ l2_glass_text_color | default: '#000000' }}; --menu-child-active-font-color: {{ l2_glass_text_color | default: '#000000' }};{% endif %}"
               >
                 {% assign list_id = 'MegaMenuList-' | append: forloop.index %}
                 {% if enable_mega_menu %}
@@ -212,7 +217,7 @@
         --l2-glass-border-alpha: {{ block_settings.l2_glass_border_opacity | default: 20 | divided_by: 100 }};
         --l2-glass-border-width: {{ block_settings.l2_glass_border_width | default: 1 }}px;
         --l2-glass-shadow: {% if block_settings.l2_glass_box_shadow %}0 22px 36px rgb(0 0 0 / 0.16){% else %}none{% endif %};
-        --l2-glass-text-color: {{ block_settings.l2_glass_text_color | default: '#000000' }};
+        --l2-glass-text-color: {{ l2_glass_text_color | default: '#000000' }};
       "
       {{ block.shopify_attributes }}
       data-hydration-key="header-menu"
@@ -988,8 +993,15 @@
     },
     {
       "type": "color",
-      "id": "l2_glass_text_color",
-      "label": "L2 glass text color",
+      "id": "l2_glass_text_color_home",
+      "label": "L2 glass text color on homepage",
+      "default": "#000000",
+      "visible_if": "{{ block.settings.enable_l2_glassmorphism == true }}"
+    },
+    {
+      "type": "color",
+      "id": "l2_glass_text_color_other",
+      "label": "L2 glass text color on other pages",
       "default": "#000000",
       "visible_if": "{{ block.settings.enable_l2_glassmorphism == true }}"
     },
