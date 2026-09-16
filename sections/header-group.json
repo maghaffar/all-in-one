@@ -95,6 +95,7 @@
             "menu": "main-menu",
             "enable_mega_menu": false,
             "enable_l2_glassmorphism": false,
+            "enable_l2_glassmorphism_home_only": false,
             "l2_glass_text_color_home": "{{ settings.color_palette.background }}",
             "l2_glass_text_color_other": "{{ settings.color_palette.background }}",
             "l2_glass_background_color": "#ffffff",

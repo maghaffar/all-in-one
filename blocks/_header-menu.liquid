@@ -14,6 +14,10 @@
   else
     assign l2_glass_text_color = block_settings.l2_glass_text_color_other
   endif
+  assign enable_l2_glassmorphism = block_settings.enable_l2_glassmorphism
+  if block_settings.enable_l2_glassmorphism_home_only and request.page_type != 'index'
+    assign enable_l2_glassmorphism = false
+  endif
 %}
 
 {% case variant %}
@@ -147,7 +151,7 @@
               <div
                 id="submenu-{{ forloop.index }}"
                 class="menu-list__submenu-inner"
-                style="{% render 'submenu-font-styles', settings: block_settings %}{% if block_settings.enable_l2_glassmorphism %} --menu-child-font-color: {{ l2_glass_text_color | default: '#000000' }}; --menu-child-active-font-color: {{ l2_glass_text_color | default: '#000000' }};{% endif %}"
+                style="{% render 'submenu-font-styles', settings: block_settings %}{% if enable_l2_glassmorphism %} --menu-child-font-color: {{ l2_glass_text_color | default: '#000000' }}; --menu-child-active-font-color: {{ l2_glass_text_color | default: '#000000' }};{% endif %}"
               >
                 {% assign list_id = 'MegaMenuList-' | append: forloop.index %}
                 {% if enable_mega_menu %}
@@ -207,7 +211,7 @@
 
     <header-menu
       ref="headerMenu"
-      class="header-menu{% unless enable_mega_menu %} header-menu--dropdown{% endunless %}{% if block_settings.enable_l2_glassmorphism %} header-menu--l2-glassmorphism{% endif %}"
+      class="header-menu{% unless enable_mega_menu %} header-menu--dropdown{% endunless %}{% if enable_l2_glassmorphism %} header-menu--l2-glassmorphism{% endif %}"
       style="
         --l2-glass-bg-rgb: {{ block_settings.l2_glass_background_color.rgb | default: '255, 255, 255' }};
         --l2-glass-bg-alpha: {{ block_settings.l2_glass_background_opacity | default: 84 | divided_by: 100 }};
@@ -990,6 +994,13 @@
       "id": "enable_l2_glassmorphism",
       "label": "Enable L2 dropdown glassmorphism",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_l2_glassmorphism_home_only",
+      "label": "Enable L2 glassmorphism on homepage only",
+      "default": false,
+      "visible_if": "{{ block.settings.enable_l2_glassmorphism == true }}"
     },
     {
       "type": "color",
