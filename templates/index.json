@@ -44,8 +44,8 @@
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Majestic_binyousaf.jpg",
-            "link": "shopify://collections/majestic",
+            "image_1": "shopify://shop_images/IZEL_BINYOUSAF_BANNER_2.jpg",
+            "link": "shopify://collections/izel",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
