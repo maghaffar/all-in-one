@@ -769,17 +769,15 @@
       "block_order": [
         "group_Hffw6j"
       ],
-      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
-          "summer-stitch-wear",
           "winter-stitch-wear"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 2,
-        "mobile_columns": "2",
+        "mobile_columns": "1",
         "mobile_card_size": "60cqw",
         "columns_gap": 2,
         "bento_gap": 8,
